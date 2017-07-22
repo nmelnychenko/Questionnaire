@@ -16,10 +16,9 @@ const renderField = ({ input, placeholder, type, meta: { touched, error, warning
     </div>
 );
 
-const ContactForm = (props) => {
-    const { handleSubmit } = props;
+const ContactForm = () => {
     return (
-        <form onSubmit={handleSubmit}>
+        <form>
             <Field name="username" type="text"
                    component={renderField} placeholder="Username"
                    validate={[ required ]}

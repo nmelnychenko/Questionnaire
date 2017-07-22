@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-const NextStep = () => (
+const NextStep = (props) => (
     <div className="button next">
-        <button>Следующий</button>
+        <Link to={props.next}>Следующий</Link>
     </div>
 );
 

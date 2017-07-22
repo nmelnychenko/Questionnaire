@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-const PreviousStep = () => (
+const PreviousStep = (props) => (
     <div className="button previous">
-        <button>Предыдущий</button>
+        <Link to={props.prev}>Предыдущий</Link>
     </div>
 );
 

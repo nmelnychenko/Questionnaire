@@ -30,7 +30,7 @@ export default class PersonalInfo extends Component {
                 <div>1. Введите имя и e-mail</div>
                 <ContactForm />
                 <PreviousStep />
-                <NextStep />
+                <NextStep next="/location"/>
             </section>
         );
     }

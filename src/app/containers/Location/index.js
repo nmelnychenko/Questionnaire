@@ -83,8 +83,8 @@ export default class Location extends Component {
                     name="form-field-name2"
                     options={options2}
                 />
-                <PreviousStep />
-                <NextStep />
+                <PreviousStep prev="/"/>
+                <NextStep next="/networks"/>
             </section>
         );
     }
