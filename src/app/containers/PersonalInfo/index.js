@@ -3,7 +3,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 // Components
-import Header from '../../components/Header/index';
+import Header from '../../components/Header';
+import ContactForm from '../../components/ContactForm';
+import PreviousStep from '../../components/PreviousStep';
+import NextStep from '../../components/NextStep';
 
 export default class PersonalInfo extends Component {
     static propTypes = {
@@ -25,6 +28,9 @@ export default class PersonalInfo extends Component {
             <section className = 'personalInfo'>
                 <Header />
                 <div>1. Введите имя и e-mail</div>
+                <ContactForm />
+                <PreviousStep />
+                <NextStep />
             </section>
         );
     }
