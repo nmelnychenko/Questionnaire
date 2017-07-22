@@ -4,24 +4,30 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-import App from './components/App';
-import Home from './components/home/Home';
-import About from './components/about/About';
+import App from './components';
+import PersonalInfo from './containers/PersonalInfo';
+import Location from './containers/Location';
+import SocialNetworks from './containers/SocialNetworks';
+import PictureChecking from './containers/PictureChecking';
+import Profile from './containers/Profile';
 
 import reducers from './reducers';
 
-import './components/bundle.scss';
+import './theme/bundle.scss';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 const store = createStoreWithMiddleware(reducers);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
-      <Route path="/" component={App}>
-        <IndexRoute component={Home} />;
-        <Route path="/about" component={About} />
-      </Route>
-    </Router>
-  </Provider>
+    <Provider store={store}>
+        <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
+            <Route path="/" component={App}>
+                <IndexRoute component={PersonalInfo} />;
+                <Route path="/location" component={Location} />
+                <Route path="/networks" component={SocialNetworks} />
+                <Route path="/checking" component={PictureChecking} />
+                <Route path="/profile" component={Profile} />
+            </Route>
+        </Router>
+    </Provider>
   , document.getElementById('react-root'));
